@@ -95,7 +95,11 @@ export const useFloorPlanStore = create<FloorPlanState>()(
     addShape: (shape) =>
       set((state) => {
         state.shapes.push(shape);
-        state.saveToHistory();
+        // Save to history
+        const newHistory = state.history.slice(0, state.historyIndex + 1);
+        newHistory.push(JSON.parse(JSON.stringify(state.shapes)));
+        state.history = newHistory;
+        state.historyIndex = newHistory.length - 1;
       }),
 
     updateShape: (id, updates) =>
@@ -110,7 +114,11 @@ export const useFloorPlanStore = create<FloorPlanState>()(
       set((state) => {
         state.shapes = state.shapes.filter((s) => s.id !== id);
         state.selectedShapeIds = state.selectedShapeIds.filter((sid) => sid !== id);
-        state.saveToHistory();
+        // Save to history
+        const newHistory = state.history.slice(0, state.historyIndex + 1);
+        newHistory.push(JSON.parse(JSON.stringify(state.shapes)));
+        state.history = newHistory;
+        state.historyIndex = newHistory.length - 1;
       }),
 
     selectShape: (id, multiSelect = false) =>
