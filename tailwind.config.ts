@@ -39,6 +39,10 @@ export default {
           DEFAULT: "hsl(var(--accent))",
           foreground: "hsl(var(--accent-foreground))",
         },
+        building: {
+          DEFAULT: "hsl(var(--building))",
+          foreground: "hsl(var(--building-foreground))",
+        },
         popover: {
           DEFAULT: "hsl(var(--popover))",
           foreground: "hsl(var(--popover-foreground))",
@@ -47,15 +51,16 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        sidebar: {
-          DEFAULT: "hsl(var(--sidebar-background))",
-          foreground: "hsl(var(--sidebar-foreground))",
-          primary: "hsl(var(--sidebar-primary))",
-          "primary-foreground": "hsl(var(--sidebar-primary-foreground))",
-          accent: "hsl(var(--sidebar-accent))",
-          "accent-foreground": "hsl(var(--sidebar-accent-foreground))",
-          border: "hsl(var(--sidebar-border))",
-          ring: "hsl(var(--sidebar-ring))",
+        canvas: {
+          bg: "hsl(var(--canvas-bg))",
+        },
+        grid: {
+          minor: "hsl(var(--grid-minor))",
+          major: "hsl(var(--grid-major))",
+        },
+        label: {
+          bg: "hsl(var(--label-bg))",
+          text: "hsl(var(--label-text))",
         },
       },
       borderRadius: {
