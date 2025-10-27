@@ -3,10 +3,12 @@ import { PlotStep } from '@/components/Wizard/PlotStep';
 import { HouseStep } from '@/components/Wizard/HouseStep';
 import { DetailsStep } from '@/components/Wizard/DetailsStep';
 import { ExportStep } from '@/components/Wizard/ExportStep';
-import { FloorPlanCanvas } from '@/components/Canvas/FloorPlanCanvas';
 import { MainToolbar } from '@/components/Toolbar/MainToolbar';
 import { PropertiesPanel } from '@/components/Properties/PropertiesPanel';
 import { useFloorPlanStore } from '@/store/floorPlanStore';
+import * as React from 'react';
+
+const FloorPlanCanvas = React.lazy(() => import('@/components/Canvas/FloorPlanCanvas').then(m => ({ default: m.FloorPlanCanvas })));
 
 const Index = () => {
   const { currentStep } = useFloorPlanStore();
